@@ -1,0 +1,4 @@
+@EndUserText.label: 'ZUI_M_CAN_MATDOC'
+define service ZUI_M_CAN_MATDOC {
+  expose ZC_M_CAN_MATDOC;
+}

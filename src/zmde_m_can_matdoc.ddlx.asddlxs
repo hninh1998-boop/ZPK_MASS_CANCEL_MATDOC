@@ -1,0 +1,79 @@
+@Metadata.layer: #CORE
+@UI:{
+    headerInfo: { typeName: 'General',
+                  typeNamePlural: 'Generals',
+                  title: { value: 'MaterialDocument' }
+    }
+}
+
+annotate entity ZC_M_CAN_MATDOC with
+{
+  @UI.facet          : [
+   {
+   id                 : 'General',
+   purpose            : #STANDARD,
+   position           : 10,
+   isPartOfPreview    : true,
+   label              : 'General',
+   type               : #IDENTIFICATION_REFERENCE,
+   targetQualifier    : 'General'
+   }]
+
+  @EndUserText.label: 'Material Document'
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10, qualifier: 'General' }]
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.filter: { mandatory: true,
+                         selectionType: #SINGLE,
+                         multipleSelections: true }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_M_CAN_MATDOC_VH',
+                                                 element: 'MaterialDocument' },
+                                       additionalBinding: [{ localElement: 'MaterialDocumentYear',
+                                                             element: 'MaterialDocumentYear',
+                                                             usage: #FILTER_AND_RESULT }] }]
+  MaterialDocument;
+
+  @EndUserText.label: 'Material Document Item'
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20, qualifier: 'General' }]
+  MaterialDocumentItem;
+
+  @EndUserText.label: 'Material Document Year'
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30, qualifier: 'General' }]
+  MaterialDocumentYear;
+
+  @EndUserText.label: 'Posting Date'
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40, qualifier: 'General' }]
+  PostingDate;
+
+  @EndUserText.label: 'Reversed Material Document'
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50, qualifier: 'General' }]
+  ReversedMaterialDocument;
+
+  @EndUserText.label: 'Reversed Material Document Item'
+  @UI.lineItem: [{ position: 60 }]
+  @UI.identification: [{ position: 60, qualifier: 'General' }]
+  ReversedMatdocItem;
+
+  @EndUserText.label: 'Item has been Canceled'
+  @UI.lineItem: [{ position: 70 }]
+  @UI.identification: [{ position: 70, qualifier: 'General' }]
+  ItemHasBeenCanceled;
+
+  @EndUserText.label: 'Has Reversal Movement Type'
+  @UI.lineItem: [{ position: 80 }]
+  @UI.identification: [{ position: 80, qualifier: 'General' }]
+  HasReversalMovementType;
+
+  @EndUserText.label: 'Message'
+  @UI.lineItem: [{ position: 90, criticality: 'MessageCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  @UI.identification: [{ position: 90, qualifier: 'General', criticality: 'MessageCriticality', criticalityRepresentation: #WITHOUT_ICON }]
+  Message;
+
+  @UI.hidden: true
+  MessageCriticality;
+
+}

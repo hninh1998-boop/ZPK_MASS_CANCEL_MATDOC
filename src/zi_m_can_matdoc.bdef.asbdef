@@ -1,0 +1,10 @@
+unmanaged implementation in class zbp_i_m_can_matdoc unique;
+strict ( 2 );
+
+define behavior for ZI_M_CAN_MATDOC alias MatDoc
+lock master
+authorization master ( instance )
+{
+  action cancelItem result [1] $self;
+  action cancelHeader result [1] $self;
+}

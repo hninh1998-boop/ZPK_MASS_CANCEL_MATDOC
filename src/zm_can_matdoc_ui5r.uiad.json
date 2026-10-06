@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "An SAP Fiori application.",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Mass Cancel Material Document"
+  },
+  "ui5AppDetails": {
+    "appId": "zmcanmatdoc"
+  },
+  "navigation": {
+    "targetMappingId": "ZM_CAN_MATDOC_UI5R_TM",
+    "semanticObject": "zm_can_matdoc",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "ZM_CAN_MATDOC_UI5R_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Mass Cancel Material Document"
+      }
+    }
+  ]
+}

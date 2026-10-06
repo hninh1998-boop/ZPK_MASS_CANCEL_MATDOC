@@ -1,0 +1,5 @@
+CLASS zbp_i_m_can_matdoc DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_m_can_matdoc.
+ENDCLASS.
+
+CLASS zbp_i_m_can_matdoc IMPLEMENTATION.
+ENDCLASS.
