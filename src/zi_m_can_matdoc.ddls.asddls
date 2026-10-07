@@ -14,6 +14,8 @@ define root view entity ZI_M_CAN_MATDOC
                                                            and CancelItem.ReversedMaterialDocumentYear = Item.MaterialDocumentYear
                                                            and CancelItem.ReversedMaterialDocument     = Item.MaterialDocument
                                                            and CancelItem.ReversedMaterialDocumentItem = Item.MaterialDocumentItem
+    left outer join I_ProductDescription     as ProductText on  ProductText.Product  = Item.Material
+                                                            and ProductText.Language = $session.system_language
 {
   key Item.MaterialDocument,
   key Item.MaterialDocumentItem,
@@ -30,6 +32,14 @@ define root view entity ZI_M_CAN_MATDOC
       end                               as ReversedMatdocItem,
       Cube.GoodsMovementIsCancelled     as ItemHasBeenCanceled,
       Cube.IsReversalMovementType       as HasReversalMovementType,
+      // Các field chỉ để hiển thị trên báo cáo
+      Item.GoodsMovementType,
+      Item.Material,
+      ProductText.ProductDescription,
+      Item.Plant,
+      @Semantics.quantity.unitOfMeasure: 'EntryUnit'
+      Item.QuantityInEntryUnit,
+      Item.EntryUnit,
       // Chứng từ chuyển kho / chuyển plant (311, 301, ...): có plant đối ứng
       cast( case when Item.IssuingOrReceivingPlant <> ''
                  then 'X'

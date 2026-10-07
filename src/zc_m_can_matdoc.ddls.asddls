@@ -14,6 +14,13 @@ define root view entity ZC_M_CAN_MATDOC
       ReversedMatdocItem,
       ItemHasBeenCanceled,
       HasReversalMovementType,
+      GoodsMovementType,
+      Material,
+      ProductDescription,
+      Plant,
+      @Semantics.quantity.unitOfMeasure: 'EntryUnit'
+      QuantityInEntryUnit,
+      EntryUnit,
       @ObjectModel.virtualElementCalculatedBy: 'ABAP:ZCL_M_CAN_MATDOC_MSG'
       virtual Message            : abap.char( 255 ),
       @ObjectModel.virtualElementCalculatedBy: 'ABAP:ZCL_M_CAN_MATDOC_MSG'

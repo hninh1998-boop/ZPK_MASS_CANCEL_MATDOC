@@ -68,6 +68,36 @@ annotate entity ZC_M_CAN_MATDOC with
   @UI.identification: [{ position: 80, qualifier: 'General' }]
   HasReversalMovementType;
 
+  @EndUserText.label: 'Movement type'
+  @UI.lineItem: [{ position: 81 }]
+  @UI.identification: [{ position: 81, qualifier: 'General' }]
+  GoodsMovementType;
+
+  @EndUserText.label: 'Material'
+  @UI.lineItem: [{ position: 82 }]
+  @UI.identification: [{ position: 82, qualifier: 'General' }]
+  Material;
+
+  @EndUserText.label: 'Plant'
+  @UI.lineItem: [{ position: 83 }]
+  @UI.identification: [{ position: 83, qualifier: 'General' }]
+  Plant;
+
+  @EndUserText.label: 'Quantity in Unit of Entry'
+  @UI.lineItem: [{ position: 84 }]
+  @UI.identification: [{ position: 84, qualifier: 'General' }]
+  QuantityInEntryUnit;
+
+  @EndUserText.label: 'Unit of Entry'
+  @UI.lineItem: [{ position: 85 }]
+  @UI.identification: [{ position: 85, qualifier: 'General' }]
+  EntryUnit;
+
+  @EndUserText.label: 'Material description'
+  @UI.lineItem: [{ position: 86 }]
+  @UI.identification: [{ position: 86, qualifier: 'General' }]
+  ProductDescription;
+
   @EndUserText.label: 'Message'
   @UI.lineItem: [{ position: 90, criticality: 'MessageCriticality', criticalityRepresentation: #WITHOUT_ICON }]
   @UI.identification: [{ position: 90, qualifier: 'General', criticality: 'MessageCriticality', criticalityRepresentation: #WITHOUT_ICON }]
